@@ -1,11 +1,9 @@
 package models
 
-import (
-	"github.com/felipeversiane/note-rest-api/db"
-)
+import "github.com/felipeversiane/note-rest-api/db"
 
 func Insert(todo Todo) (id int64, err error) {
-	conn, err := db.OppenConnection()
+	conn, err := db.OpenConnection()
 	if err != nil {
 		return
 	}
