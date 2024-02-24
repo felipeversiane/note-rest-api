@@ -7,6 +7,7 @@ import (
 	"strconv"
 
 	"github.com/felipeversiane/note-rest-api/models"
+	"github.com/go-chi/chi/v5"
 )
 
 func Update(w http.ResponseWriter, r *http.Request) {
@@ -26,7 +27,7 @@ func Update(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		return
 	}
-	
+
 	rows, err := models.Update(int64(id), todo)
 
 	if err != nil {
